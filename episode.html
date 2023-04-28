@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TV Show Episode</title>
+    <link rel="stylesheet" href="css/episode.css">
+    <script>
+      $("iframe").on("load", function() {
+    $(this).contents().find("a[href*='whoursie.com']").on("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+    $(this).contents().find("a").on("click", function(e) {
+      if ($(this).attr('href').includes('whoursie.com')) {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      }
+    });
+  });
+  
+    </script>
+  </head>
+  <body>
+    <h1>TV Show Episode</h1>
+    <div class="embed-container"></div>
+    <br>
+    <div class="season-dropdown"></div>
+    <div class="episodes"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/episode.js"></script>
+  </body>
+</html>
